@@ -1,6 +1,10 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
-import store from './store'
+import { store, key } from './store'
 
-createApp(App).use(store).use(router).mount('#app')
+// 项目入口
+createApp(App)
+  .use(store, key) // 挂载数据容器 key的作用是
+  .use(router) // 挂载路由
+  .mount('#app')
